@@ -1,0 +1,41 @@
+---
+Checks:
+  - '*'
+  - -altera-id-dependent-backward-branch
+  - -altera-struct-pack-align
+  - -altera-unroll-loops
+  - -bugprone-easily-swappable-parameters
+  - -cert-err58-cpp
+  - -concurrency-mt-unsafe
+  - -cppcoreguidelines-avoid-c-arrays
+  - -cppcoreguidelines-avoid-const-or-ref-data-members
+  - -cppcoreguidelines-avoid-do-while
+  - -cppcoreguidelines-avoid-magic-numbers
+  - -cppcoreguidelines-avoid-non-const-global-variables
+  - -cppcoreguidelines-non-private-member-variables-in-classes
+  - -cppcoreguidelines-owning-memory
+  - -cppcoreguidelines-prefer-member-initializer
+  - -cppcoreguidelines-pro-bounds-array-to-pointer-decay
+  - -cppcoreguidelines-pro-bounds-constant-array-index
+  - -cppcoreguidelines-pro-bounds-pointer-arithmetic
+  - -fuchsia-*
+  - -hicpp-avoid-c-arrays
+  - -hicpp-no-array-decay
+  - -llvmlibc-*
+  - -llvm-header-guard
+  - -misc-include-cleaner
+  - -misc-non-private-member-variables-in-classes
+  - -modernize-avoid-c-arrays
+  - -modernize-pass-by-value
+  - -modernize-use-trailing-return-type
+  - -readability-convert-member-functions-to-static
+  - -readability-function-cognitive-complexity
+  - -readability-identifier-length
+  - -readability-magic-numbers
+CheckOptions:
+  google-readability-braces-around-statements.ShortStatementLines: 1
+  readability-braces-around-statements.ShortStatementLines: 1
+  hicpp-braces-around-statements.ShortStatementLines: 1
+WarningsAsErrors: true
+FormatStyle:      'google'
+...

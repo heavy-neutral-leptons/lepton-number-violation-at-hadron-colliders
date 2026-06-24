@@ -1,0 +1,172 @@
+# python madproduce.py --study Trimuon@FCChh --name bg-4l-ptmax
+# Copyright 2023-2026 Bruno M. S. Oliveira
+# ----- Model -----
+import model sm-no_masses
+
+define p  = g d d~ u u~ s s~ c c~ b b~
+define j  = g d d~ u u~ s s~ c c~ b b~
+define qq = u u~ c c~ d d~ s s~ b b~
+
+define uu = u u~
+define cc = c c~
+define tt = t t~
+define dd = d d~
+define ss = s s~
+define bb = b b~
+
+define l- = mu-
+define l+ = mu+
+define ll = mu+ mu-
+define v  = vm
+define v~ = vm~
+define vv = vm vm~
+
+define ee  = e+ e-
+define vee = ve ve~
+define mu  = mu+ mu-
+define vmu = vm vm~
+define ta  = ta+ ta-
+define vta = vt vt~
+
+define ww = w+ w-
+
+# ----- Simulation -----
+generate    p p > ll ll ll ll / h
+
+output Trimuon@FCChh/bg-4l-ptmax-02.run
+
+!sed -e "s/HEPMCoutput:file.*/HEPMCoutput:file = hepmc/" "Trimuon@FCChh/bg-4l-ptmax-02.run/Cards/pythia8_card_default.dat" >  "Trimuon@FCChh/bg-4l-ptmax-02.run/Cards/pythia8_card.dat"
+# !sed -e "/^decay /d" "Trimuon@FCChh/bg-4l-ptmax-02.run/Cards/madspin_card_default.dat" > "Trimuon@FCChh/bg-4l-ptmax-02.run/Cards/madspin_card.dat"
+
+launch Trimuon@FCChh/bg-4l-ptmax-02.run
+
+shower=Pythia8
+detector=OFF
+analysis=OFF
+madspin=OFF
+
+done
+
+# ----- Simulation Parameters -----
+update to_full
+
+# set sde_strategy 1
+set hard_survey 2
+
+# set time_of_flight 0.
+
+set pdlabel lhapdf
+set lhaid 338100
+
+set maxjetflavor 5
+
+set nevents 100000
+set iseed 02
+
+set ebeam1 50000
+set ebeam2 50000
+
+# ----- Matching Parameters -----
+# set ickkw 1
+#
+# set pdfwgt T
+#
+# set xqcut 20
+
+# ----- Cut Parameters -----
+set cut_decays True
+
+# Quarks
+set ptj 20.0
+set ptjmax -1.0
+set xptj 0.0
+
+set ptb 20.0
+set ptbmax -1.0
+set xptb 0.0
+
+set ptj1min 0.0
+set ptj1max -1.0
+set ptj2min 0.0
+set ptj2max -1.0
+set ptj3min 0.0
+set ptj3max -1.0
+set ptj4min 0.0
+set ptj4max -1.0
+set cutuse 0
+
+set ej 0.0
+set ejmax -1.0
+
+set eb 0.0
+set ebmax -1.0
+
+set etajmin 0.0
+set etaj 6.5
+
+set etabmin 0.0
+set etab 6.5
+
+set htjmin 0.0
+set htjmax -1.0
+set ihtmin 0.0
+set ihtmax -1.0
+set ht2min 0.0
+set ht2max -1.0
+set ht3min 0.0
+set ht3max -1.0
+set ht4min 0.0
+set ht4max -1.0
+
+# Leptons
+set ptl 2.0
+set ptlmax -1.0
+set xptl 0.0
+
+set ptl1min 18.0
+set ptl1max -1.0
+set ptl2min 18.0
+set ptl2max -1.0
+set ptl3min 18.0
+set ptl3max -1.0
+set ptl4min 0.0
+set ptl4max 40.0
+
+set misset 0.0
+set missetmax -1.0
+
+set el 0.0
+set elmax -1.0
+
+set etalmin 0.0
+set etal 6.5
+
+# ΔR and Invariant mass
+set drjj 0.0
+set drjjmax -1.0
+set mmjj 20.0
+set mmjjmax -1.0
+
+set drbb 0.0
+set drbbmax -1.0
+set mmbb 20.0
+set mmbbmax -1.0
+
+set drbj 0.0
+set drbjmax -1.0
+
+set drll 0.2
+set drllmax -1.0
+set mmll 0.0
+set mmllmax -1.0
+set ptllmin 0.0
+set ptllmax -1.0
+
+set mmnl 0.0
+set mmnlmax -1.0
+
+set drjl 0.0
+set drjlmax -1.0
+
+set drbl 0.0
+set drblmax -1.0
