@@ -1,5 +1,7 @@
 # Lepton number violation at hadron colliders via pseudo-Dirac heavy neutral leptons
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20830469.svg)](https://doi.org/10.5281/zenodo.20830469)
+
 Symmetry-protected low-scale seesaw models can account for the observed neutrino flavour oscillations without fine-tuning, while yielding collider-accessible signatures through pseudo-Dirac heavy neutral leptons (HNLs).
 Seesaw frameworks generically predict lepton number (LN) violation, which provides a powerful discovery channel.
 In symmetry-protected realizations, however, the amplitudes for LN violation are strongly suppressed by destructive interference between the contributions of the two quasi-degenerate HNLs within the usual QFT plane-wave treatment.
